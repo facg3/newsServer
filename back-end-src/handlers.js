@@ -26,7 +26,7 @@ const publicFileHandler = (req, res) => {
     jpg: 'image/jpeg',
     png: 'image/png',
   }; //
-  fs.readFile(path.join(__dirname, '..', '/public', endpoint), (err, file) => {
+  fs.readFile(path.join(__dirname, '..', endpoint), (err, file) => {
     if (err) {
       console.log('Erorr Handling', err.message);
     } else {

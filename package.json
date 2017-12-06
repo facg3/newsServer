@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node back-end-src/server.js",
     "test": "tape front-end-src/test/test.js | shot"
   },
   "keywords": [],

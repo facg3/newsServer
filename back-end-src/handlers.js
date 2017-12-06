@@ -21,7 +21,8 @@ const publicFileHandler = (req, res) => {
     js: 'application/javascript',
     jpg: 'image/jpeg',
     png: 'image/png',
-  }; //
+    ico : 'image/x-icon'
+  };
   fs.readFile(path.join(__dirname, '..', endpoint), (err, file) => {
     if (err) {
       console.log('Erorr Handling', err.message);
@@ -33,16 +34,19 @@ const publicFileHandler = (req, res) => {
 };
 
 const publicNewsHandler = (req, res) => {
-let arr = request.myRequest('https://newsapi.org/v2/everything?sources=al-jazeera-english&apiKey=7adfe861e4094bbdb3a274e9dc61d885',
+res.writeHead(200,{'Content-type':'application/json'});
+request.myRequest('https://newsapi.org/v2/everything?sources=al-jazeera-english&apiKey=7adfe861e4094bbdb3a274e9dc61d885',
 res);
 };
 
 const sportNewsHandler = (req, res) => {
+res.writeHead(200,{'Content-type':'application/json'})
 request.myRequest('https://newsapi.org/v2/top-headlines?sources=football-italia&apiKey=7adfe861e4094bbdb3a274e9dc61d885',
 res);
 };
 
 const musicNewsHandler = (req, res) => {
+res.writeHead(200,{'Content-type':'application/json'});
 request.myRequest('https://newsapi.org/v2/everything?sources=mtv-news&apiKey=7adfe861e4094bbdb3a274e9dc61d885',
 res);
 };

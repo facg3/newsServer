@@ -1,22 +1,22 @@
 const request = require('request');
-const http = require('http');
 
-const myRequest = (url, callback) => {
-  http.get(url, (response) => {
-  response.setEncoding('utf8');
+const myRequest = (url) => {
 
-    let body = '';
-    response.on('data', (data) => {
-     body = data;
-    });
+  var option = {
+    url: url,
+    method :'GET'
+  };
+  request(option, (err, res) => {
 
-    response.on('end', () => {
-      callback(null, response, body);
-    });
-
-  }).on('error', (error) => {
-    callback(error);
+    if (err) {
+      return console.log(err.message);
+    } else {
+      console.log(JSON.parse(res.body));
+    }
   });
+
 };
 
-module.exports= myRequest;
+module.exports = {
+  myRequest
+};

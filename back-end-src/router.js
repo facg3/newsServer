@@ -15,10 +15,10 @@ const router = (req, res) => {
    handlers.publicNewsHandler(req, res);
  }
  else if (endpoint === '/sportNews') {
-
+   handlers.sportNewsHandler(req, res);
  }
  else if (endpoint === '/musicNews') {
-
+   handlers.musicNewsHandler(req, res);
  }
  else {
     res.writeHead(404, 'Content-type : text/html');

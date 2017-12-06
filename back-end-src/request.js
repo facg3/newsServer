@@ -22,7 +22,7 @@ const myRequest = (url,response) => {
         };
         poster.push(obj);
       });
-       
+
        response.end(JSON.stringify(poster));
  }
   });

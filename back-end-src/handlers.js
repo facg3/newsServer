@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-
+const request = require('request');
 
 const homePageHandler = (req, res) => {
   fs.readFile(path.join(__dirname, '..', 'public', 'index.html'), (error, file) => {
@@ -12,14 +12,11 @@ const homePageHandler = (req, res) => {
     }
   });
 };
+
 const publicFileHandler = (req, res) => {
   const endpoint = req.url;
-  console.log(endpoint);
   const arr = req.url.split('.');
-  console.log(arr);
   const type = arr[arr.length - 1];
-  console.log(type);
-  console.log(type);
   const fileType = {
     css: 'text/css',
     js: 'application/javascript',
@@ -35,17 +32,23 @@ const publicFileHandler = (req, res) => {
     }
   });
 };
-const publicNewsHandler = (req, res) => {
-  let dataStream = '';
-  req.on('data', (chunck) => {
-    dataStream += chunck;
-  });
-  req.on('end', () => {
 
-  });
+const publicNewsHandler = (req, res) => {
+
 };
+
+const sportNewsHandler = (req, res) => {
+
+};
+
+const musicNewsHandler = (req, res) => {
+
+};
+
 module.exports = {
   homePageHandler,
   publicFileHandler,
-  publicNewsHandler
+  publicNewsHandler,
+  sportNewsHandler,
+  musicNewsHandler
 };

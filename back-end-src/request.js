@@ -1,7 +1,5 @@
 const request = require('request');
-
-const myRequest = (url) => {
-
+const myRequest = (url,response) => {
   var option = {
     url: url,
     method :'GET'
@@ -11,10 +9,23 @@ const myRequest = (url) => {
     if (err) {
       return console.log(err.message);
     } else {
-      console.log(JSON.parse(res.body));
-    }
-  });
+      var poster = [];
+      var data = JSON.parse(res.body);
+      var arr = data.articles;
+      arr.forEach((item) => {
+        var obj = {
+          title:item.title,
+          img:item.urlToImage,
+          date:item.publishedAt,
+          description:item.description,
+          url:item.url
+        };
+        poster.push(obj);
+      });
 
+       response.end(JSON.stringify(poster));
+ }
+  });
 };
 
 module.exports = {

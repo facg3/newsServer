@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-
+const request = require('./request.js');
 
 const homePageHandler = (req, res) => {
   fs.readFile(path.join(__dirname, '..', 'public', 'index.html'), (error, file) => {
@@ -36,13 +36,7 @@ const publicFileHandler = (req, res) => {
   });
 };
 const publicNewsHandler = (req, res) => {
-  let dataStream = '';
-  req.on('data', (chunck) => {
-    dataStream += chunck;
-  });
-  req.on('end', () => {
 
-  });
 };
 module.exports = {
   homePageHandler,

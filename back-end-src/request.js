@@ -18,3 +18,5 @@ const myRequest = (url, callback) => {
     callback(error);
   });
 };
+
+module.exports= myRequest;

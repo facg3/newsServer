@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node back-end-src/server.js",
-    "test": "node back-end-src/test/test.js | tap-spec"
+    "test": "node back-end-src/test/test.js | tap-spec",
+    "nodemon": "nodemon back-end-src/server.js"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +15,7 @@
     "eslint": "^4.12.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
+    "nodemon": "^1.12.5",
     "request": "^2.83.0",
     "shot": "^3.4.2",
     "tap-spec": "^4.1.1",

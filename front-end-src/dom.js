@@ -4,6 +4,9 @@ postContainer.className = "news-container";
 
 // recieves an array of NEWS OBJECTS after fetch() gets it from the server.
 function displayNews(arrayOfNewsObject){
+  if (postContainer) {
+    postContainer.innerHTML = '';
+  }
   arrayOfNewsObject.forEach(function(post){
     postContainer.innerHTML += `<article class="one-post">
       <h3 class="post-title">${post.title}</h3>
@@ -16,12 +19,15 @@ function displayNews(arrayOfNewsObject){
   body.appendChild(postContainer)
 }
 
+
 // listeners for user click on li elements on the navbar and make XHR requests depends on where a user clicks.
 function navbarListener(){
   var home = document.querySelector('[action="/"]');
   var allNews = document.querySelector('[action="/allNews"]');
   var sportNews = document.querySelector('[action="/sportNews"]');
   var musicNews = document.querySelector('[action="/musicNews"]');
+
+
   home.addEventListener('click', function(event){
     fetch("/allNews", displayNews);
   });
@@ -36,4 +42,10 @@ function navbarListener(){
   });
 }
 
+
+document.onreadystatechange = function(){
+  if(document.readyState === 'complete'){
+    fetch("/allNews", displayNews);
+  }
+}
 navbarListener()

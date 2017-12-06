@@ -22,10 +22,14 @@ Run this project on your Local Machine
 1. our Page :[in heroku](https://news-server-.herokuapp.com/)
 
 2. Clone the repo:
+
   - SSH
+  
 ```sh
- git clone git@github.com:facg3/newsServer.git
-```- Http 
+ git clone git@github.com:facg3/newsServer.git  
+``` 
+- Http  
+
 ```sh
  git clone https://github.com/facg3/newsServer.git
 ```

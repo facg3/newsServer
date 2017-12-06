@@ -5,7 +5,7 @@ var fetch(url, callback)=>{
       if (xhr.status == 200) {
         callback(JSON.parse(xhr.responseText));
       } else {
-        console.log('Error !!');
+        console.log('Error!!');
         console.log(xhr.responseText);
       }
     }

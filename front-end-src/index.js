@@ -6,9 +6,10 @@ var fetch = (url, callback)=>{
         callback(JSON.parse(xhr.responseText));
       } else {
         console.log('Error!!');
+        console.log(xhr.responseText);
       }
     }
   }
   xhr.open("GET", url, true);
   xhr.send();
-}
+};

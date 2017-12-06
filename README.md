@@ -1,6 +1,6 @@
-# News-App!!
+﻿# News-App!!
 
-## who we are :
+## who we are ☺
 
 we are News-App!! team :smiley:   
 1.[Ismail](https://github.com/ismail2009)

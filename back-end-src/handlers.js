@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const request = require('./request.js');
-
 const homePageHandler = (req, res) => {
   fs.readFile(path.join(__dirname, '..', 'public', 'index.html'), (error, file) => {
     if (error) {
@@ -36,7 +35,7 @@ const publicFileHandler = (req, res) => {
   });
 };
 const publicNewsHandler = (req, res) => {
-
+request.myRequest('https://newsapi.org/v2/everything?sources=al-jazeera-english&apiKey=7adfe861e4094bbdb3a274e9dc61d885')
 };
 module.exports = {
   homePageHandler,

@@ -19,7 +19,7 @@ Web app about the new news that provides users with frequently updated content o
 
 Run this project on your Local Machine
 
-1. our Page :[in heroku](https://news--app.herokuapp.com/)
+1. our Page :[in heroku](https://news--applica.herokuapp.com/)
 
 2. Clone the repo:
 

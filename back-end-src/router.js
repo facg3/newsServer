@@ -5,10 +5,7 @@ const router = (req, res) => {
  if (endpoint === '/') {
    handlers.homePageHandler(req, res);
  }
- else if (endpoint.startsWith('/public')) {
-   handlers.publicFileHandler(req, res);
- }
- else if (endpoint.startsWith('/front-end-src')) {
+ else if (endpoint.startsWith('/public') || endpoint.startsWith('/front-end-src')) {
    handlers.publicFileHandler(req, res);
  }
  else if (endpoint === '/allNews') {

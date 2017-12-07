@@ -15,7 +15,7 @@ const myRequest = (url, response) => {
       arr.forEach((item) => {
         const obj = {
           title: item.title,
-          img: item.urlToImage,
+          img: item.urlToImage || 'http://uldelo.ru/image/index?style=node&fid=2517&force=&water=',
           date: item.publishedAt,
           description: item.description,
           url: item.url,

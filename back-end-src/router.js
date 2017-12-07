@@ -3,7 +3,6 @@ const handlers = require('./handlers.js');
 const router = (req, res) => {
   const endpoint = req.url;
   if (endpoint === '/') {
-    console.log('kljaskldsakldklasdkl');
     handlers.homePageHandler(req, res);
   } else if (endpoint.startsWith('/public') || endpoint.startsWith('/front-end-src')) {
     handlers.publicFileHandler(req, res);

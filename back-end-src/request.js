@@ -1,13 +1,14 @@
 const request = require('request');
-const myRequest = (url,response) => {
-  var option = {
-    url: url,
-    method :'GET'
+
+const myRequest = (url, response) => {
+  const option = {
+    url,
+    method: 'GET',
   };
   request(option, (err, res) => {
 
     if (err) {
-      return console.log(err.message);
+      res.end('<h1>Request Failed, internal server error occured</h1>');
     } else {
       var poster = [];
       var data = JSON.parse(res.body);

@@ -4,7 +4,8 @@ const request = require('./request.js');
 const homePageHandler = (req, res) => {
   fs.readFile(path.join(__dirname, '..', 'public', 'index.html'), (error, file) => {
     if (error) {
-      console.log(error);
+      res.writeHead(404, 'Content-Type: text/html');
+      res.end('<h1>Page Not Found.</h1>');
     } else {
       res.writeHead(200, 'Content-Type: text/html');
       res.end(file);
@@ -25,7 +26,8 @@ const publicFileHandler = (req, res) => {
   };
   fs.readFile(path.join(__dirname, '..', endpoint), (err, file) => {
     if (err) {
-      console.log('Erorr Handling', err.message);
+      res.writeHead(404, 'Content-Type: text/html');
+      res.end('<h1>Page Not Found.</h1>');
     } else {
       res.writeHead(200, 'Content-type:' + fileType[type]);
       res.end(file);

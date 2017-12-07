@@ -16,7 +16,7 @@ function displayNews(arrayOfNewsObject){
       <label class="post-more" for="post-link"><a id="post-link" class="post-link" href=${post.url}>READ MORE</a></label>
       </article>`
   });
-  body.appendChild(postContainer)
+  body.appendChild(postContainer);
 }
 
 
